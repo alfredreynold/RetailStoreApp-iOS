@@ -23,6 +23,9 @@
 		EB29AAD81E9F468A00E1D7EE /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29AAD01E9F468A00E1D7EE /* Store+CoreDataProperties.swift */; };
 		EB29AAD91E9F468A00E1D7EE /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29AAD11E9F468A00E1D7EE /* User+CoreDataClass.swift */; };
 		EB29AADA1E9F468A00E1D7EE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29AAD21E9F468A00E1D7EE /* User+CoreDataProperties.swift */; };
+		EB29AADD1E9FA72A00E1D7EE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29AADC1E9FA72A00E1D7EE /* DataManager.swift */; };
+		EB29AADF1E9FEE1F00E1D7EE /* DataManager+ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29AADE1E9FEE1F00E1D7EE /* DataManager+ParseData.swift */; };
+		EB29AAE41E9FF9D600E1D7EE /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = EB29AAE31E9FF9D600E1D7EE /* items.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		EB29AAD01E9F468A00E1D7EE /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Store+CoreDataProperties.swift"; path = "Model/Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EB29AAD11E9F468A00E1D7EE /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "Model/User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EB29AAD21E9F468A00E1D7EE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "Model/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB29AADC1E9FA72A00E1D7EE /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Managers/DataManager.swift; sourceTree = "<group>"; };
+		EB29AADE1E9FEE1F00E1D7EE /* DataManager+ParseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataManager+ParseData.swift"; path = "Managers/DataManager+ParseData.swift"; sourceTree = "<group>"; };
+		EB29AAE31E9FF9D600E1D7EE /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 			children = (
 				EB29AADB1E9FA59800E1D7EE /* Managers */,
 				EB29AABA1E9F372300E1D7EE /* Model */,
+				EB29AAE21E9FF9BE00E1D7EE /* MockUpData */,
 				EB29AA891E9F32C400E1D7EE /* AppDelegate.swift */,
 				EB29AA8B1E9F32C400E1D7EE /* ViewController.swift */,
 				EB29AA8D1E9F32C400E1D7EE /* Main.storyboard */,
@@ -164,8 +171,18 @@
 		EB29AADB1E9FA59800E1D7EE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				EB29AADC1E9FA72A00E1D7EE /* DataManager.swift */,
+				EB29AADE1E9FEE1F00E1D7EE /* DataManager+ParseData.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		EB29AAE21E9FF9BE00E1D7EE /* MockUpData */ = {
+			isa = PBXGroup;
+			children = (
+				EB29AAE31E9FF9D600E1D7EE /* items.json */,
+			);
+			name = MockUpData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB29AAE41E9FF9D600E1D7EE /* items.json in Resources */,
 				EB29AA971E9F32C400E1D7EE /* LaunchScreen.storyboard in Resources */,
 				EB29AA941E9F32C400E1D7EE /* Assets.xcassets in Resources */,
 				EB29AA8F1E9F32C400E1D7EE /* Main.storyboard in Resources */,
@@ -306,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB29AAD61E9F468A00E1D7EE /* Item+CoreDataProperties.swift in Sources */,
+				EB29AADD1E9FA72A00E1D7EE /* DataManager.swift in Sources */,
 				EB29AAD51E9F468A00E1D7EE /* Item+CoreDataClass.swift in Sources */,
 				EB29AA8C1E9F32C400E1D7EE /* ViewController.swift in Sources */,
 				EB29AAD41E9F468A00E1D7EE /* Cart+CoreDataProperties.swift in Sources */,
@@ -315,6 +334,7 @@
 				EB29AADA1E9F468A00E1D7EE /* User+CoreDataProperties.swift in Sources */,
 				EB29AAD71E9F468A00E1D7EE /* Store+CoreDataClass.swift in Sources */,
 				EB29AA8A1E9F32C400E1D7EE /* AppDelegate.swift in Sources */,
+				EB29AADF1E9FEE1F00E1D7EE /* DataManager+ParseData.swift in Sources */,
 				EB29AA921E9F32C400E1D7EE /* RetailStore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

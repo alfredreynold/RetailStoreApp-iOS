@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  RetailStore
 //
-//  Created by Alfred Reynold on 4/13/17.
+//  Created by Alfred Reynold on 4/14/17.
 //  Copyright © 2017 Alfred Reynold. All rights reserved.
 //
 
@@ -17,6 +17,9 @@ extension Item {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var category: Int16
+    @NSManaged public var category: String?
+    @NSManaged public var uid: Int16
+    @NSManaged public var price: Float
+    @NSManaged public var imageUrl: String?
 
 }

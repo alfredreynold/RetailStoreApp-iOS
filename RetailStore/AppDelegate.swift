@@ -17,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if !UserDefaults.standard.bool(forKey: "CreatedMockData") {
+            if let path = Bundle.main.path(forResource: "items", ofType: "json") {
+                do {
+                    let jsonString = try String.init(contentsOfFile: path, encoding: .utf8)
+                    DataManager.sharedManager.parseStoreJSONData(jsonString: jsonString)
+                    UserDefaults.standard.set(true, forKey: "CreatedMockData")
+                    UserDefaults.standard.synchronize()
+                    print("Mock created")
+                } catch {
+                    print("Error while reading json file")
+                }
+            }
+        }
+        print("bundlePath \(Bundle.main.bundlePath)")
+        print("\n\nresourcePath \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))")
         return true
     }
 
