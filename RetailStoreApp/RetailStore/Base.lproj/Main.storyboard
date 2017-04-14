@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retail Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n21-hL-IJP">
-                                <rect key="frame" x="16" y="20" width="160" height="46.5"/>
+                                <rect key="frame" x="36" y="20" width="160" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="V2m-Ey-0Si"/>
                                 </constraints>
@@ -32,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F4-0n-wI7">
-                                <rect key="frame" x="186" y="8" width="173" height="46.5"/>
+                                <rect key="frame" x="206" y="8" width="153" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyj-g5-dCX">
-                                <rect key="frame" x="309" y="59.5" width="50" height="50"/>
+                                <rect key="frame" x="309" y="60" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="1Uc-te-s0T"/>
                                     <constraint firstAttribute="height" constant="50" id="gxG-r9-Twf"/>
@@ -46,7 +46,7 @@
                                 <state key="normal" image="cart"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop now!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bu-w0-3Ui">
-                                <rect key="frame" x="16" y="68.5" width="160" height="47"/>
+                                <rect key="frame" x="31" y="69" width="160" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="dkG-Yy-d3g"/>
                                     <constraint firstAttribute="height" constant="47" id="ftJ-zH-wW2"/>
@@ -56,8 +56,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Y7-RN-Jh6">
-                                <rect key="frame" x="0.0" y="118" width="375" height="550"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HnZ-Wl-d04"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JtK-yI-48w"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +69,7 @@
                             <constraint firstItem="6Y7-RN-Jh6" firstAttribute="top" secondItem="1Bu-w0-3Ui" secondAttribute="bottom" constant="2.5" id="0eo-fi-acI"/>
                             <constraint firstItem="dyj-g5-dCX" firstAttribute="top" secondItem="6F4-0n-wI7" secondAttribute="bottom" constant="5" id="0rU-i3-12W"/>
                             <constraint firstAttribute="bottom" secondItem="6Y7-RN-Jh6" secondAttribute="bottom" constant="-1" id="2JF-4O-Lff"/>
-                            <constraint firstItem="1Bu-w0-3Ui" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Ww-nH-IXW"/>
+                            <constraint firstItem="1Bu-w0-3Ui" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="2Ww-nH-IXW"/>
                             <constraint firstItem="6F4-0n-wI7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="50w-GB-1Tq"/>
                             <constraint firstItem="dyj-g5-dCX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7m9-5f-So6"/>
                             <constraint firstItem="1Bu-w0-3Ui" firstAttribute="top" secondItem="n21-hL-IJP" secondAttribute="bottom" constant="2" id="8Uz-kG-tOF"/>
@@ -75,10 +79,14 @@
                             <constraint firstItem="n21-hL-IJP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="UcW-ob-0xt"/>
                             <constraint firstItem="6F4-0n-wI7" firstAttribute="leading" secondItem="n21-hL-IJP" secondAttribute="trailing" constant="10" id="bme-Td-4lG"/>
                             <constraint firstItem="6Y7-RN-Jh6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fjL-wl-4WP"/>
-                            <constraint firstItem="n21-hL-IJP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iqq-8t-TPf"/>
+                            <constraint firstItem="n21-hL-IJP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iqq-8t-TPf"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="6Y7-RN-Jh6" id="zUB-Mu-uko"/>
+                        <outlet property="userNameLabel" destination="6F4-0n-wI7" id="hrR-hi-K7Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

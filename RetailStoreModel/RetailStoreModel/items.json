@@ -2,42 +2,42 @@
   {
   "name":"Microwave Oven",
   "category":"Electronics",
-  "image":"oven.jpg",
+  "image":"oven.png",
   "price":4000,
   "UID":1
   },
   {
   "name":"Television",
   "category":"Electronics",
-  "image":"tv.jpg",
+  "image":"tv.png",
   "price":23000,
   "UID":2
   },
   {
   "name":"Vaccum cleaner",
   "category":"Electronics",
-  "image":"vaccumCleaner.jpg",
+  "image":"vaccumCleaner.png",
   "price":2300,
   "UID":3
   },
   {
   "name":"Table",
   "category":"Furniture",
-  "image":"table.jpg",
+  "image":"table.png",
   "price":6000,
   "UID":4
   },
   {
   "name":"Chair",
   "category":"Furniture",
-  "image":"chair.jpg",
+  "image":"chair.png",
   "price":4000,
   "UID":5
   },
   {
   "name":"Almirah",
   "category":"Furniture",
-  "image":"almirah.jpg",
+  "image":"almirah.png",
   "price":5000,
   "UID":6
   }

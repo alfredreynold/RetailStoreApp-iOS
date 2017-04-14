@@ -1,8 +1,8 @@
 //
 //  User+CoreDataProperties.swift
-//  RetailStore
+//  RetailStoreModel
 //
-//  Created by Alfred Reynold on 4/13/17.
+//  Created by Alfred Reynold on 4/14/17.
 //  Copyright © 2017 Alfred Reynold. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ extension User {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var id: Int16
     @NSManaged public var cart: Cart?
 
 }

@@ -20,10 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if !UserDefaults.standard.bool(forKey: "CreatedMockData") {
-            if let path = Bundle.main.path(forResource: "items", ofType: "json") {
+            let modelBundle = Bundle(identifier: "com.alfred.RetailStoreModel")
+            if let path = modelBundle?.path(forResource: "items", ofType: "json") {
                 do {
                     let jsonString = try String.init(contentsOfFile: path, encoding: .utf8)
                     DataManager.sharedManager.parseStoreJSONData(jsonString: jsonString)
+                    let user = User(context: DataManager.sharedManager.container.viewContext)
+                    user.name = "Thought Works"
+                    user.id = 1
+                    DataManager.sharedManager.saveContext()
                     UserDefaults.standard.set(true, forKey: "CreatedMockData")
                     UserDefaults.standard.synchronize()
                     print("Mock created")

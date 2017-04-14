@@ -14,7 +14,6 @@ extension DataManager {
         if let data = jsonString.data(using: String.Encoding.utf8) {
             do {
                 if let jDict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? [[String:Any]] {
-                    let store = Store(context: DataManager.sharedManager.container.viewContext)
                     for obj in jDict {
                         guard let name = obj["name"] as? String, let category = obj["category"] as? String, let imageUrl = obj["image"] as? String, let price = obj["price"] as? NSNumber, let uid = obj["UID"] as? Int16 else {
                             print("Error while parsing JSON \(#function)")
@@ -26,7 +25,6 @@ extension DataManager {
                         item.imageUrl = imageUrl
                         item.category = category
                         item.name = name
-                        store.addToItems(item)
                     }
                     DataManager.sharedManager.saveContext()
                 }

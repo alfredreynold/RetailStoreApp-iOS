@@ -13,9 +13,15 @@ open class DataManager {
     public static let sharedManager = DataManager()
     let modelName = "RetailStore"
     
+    lazy var managedObjectModel: NSManagedObjectModel = {
+        
+        let modelURL = Bundle(for: type(of: self)).url(forResource: self.modelName, withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
+        
+    }()
     
     open lazy var container:NSPersistentContainer  = {
-        let cont = NSPersistentContainer(name: self.modelName)
+        let cont = NSPersistentContainer(name: self.modelName, managedObjectModel: self.managedObjectModel)
         cont.loadPersistentStores { (storeDesc, error) in
             if error != nil {
                 print("Error while init Container")
