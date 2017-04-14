@@ -10,11 +10,11 @@ import Foundation
 import CoreData
 
 open class DataManager {
-    static let sharedManager = DataManager()
+    public static let sharedManager = DataManager()
     let modelName = "RetailStore"
     
     
-    lazy var container:NSPersistentContainer  = {
+    open lazy var container:NSPersistentContainer  = {
         let cont = NSPersistentContainer(name: self.modelName)
         cont.loadPersistentStores { (storeDesc, error) in
             if error != nil {
@@ -24,11 +24,11 @@ open class DataManager {
         return cont
     }()
     
-    lazy var context: NSManagedObjectContext = {
+    open lazy var context: NSManagedObjectContext = {
         return self.container.viewContext
     }()
     
-    func saveContext() {
+    open func saveContext() {
         if container.viewContext.hasChanges {
             do {
                 try container.viewContext.save()

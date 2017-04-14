@@ -10,7 +10,7 @@ import Foundation
 
 
 extension DataManager {
-    func parseStoreJSONData(jsonString:String) {
+    public func parseStoreJSONData(jsonString:String) {
         if let data = jsonString.data(using: String.Encoding.utf8) {
             do {
                 if let jDict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.init(rawValue: 0)) as? [[String:Any]] {
