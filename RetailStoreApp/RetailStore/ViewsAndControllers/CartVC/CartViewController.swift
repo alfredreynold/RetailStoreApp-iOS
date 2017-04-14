@@ -24,6 +24,17 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        updateTotal()
+        let nib = UINib(nibName: "RSCartTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cartCellIdentifier)
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.estimatedRowHeight = 44.0
+        self.title = "Cart"
+        loadData()
+    }
+    
+    func updateTotal() {
         var total:Float = 0.00
         
         if let items = user?.items?.allObjects as? [Item] {
@@ -32,13 +43,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         self.totalAmountLabel.text = "Rs. \(total)"
-        
-        let nib = UINib(nibName: "RSCartTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cartCellIdentifier)
-        tableView.tableFooterView = UIView(frame: .zero)
-        tableView.estimatedRowHeight = 44.0
-        self.title = "Cart"
-        loadData()
     }
     
     func loadData() {
@@ -103,17 +107,41 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let item = cartFetchedResultController?.object(at: indexPath) else { return }
-            DataManager.sharedManager.container.viewContext.delete(item)
+            user?.removeFromItems(item)
+            item.user = nil
             DataManager.sharedManager.saveContext()
         }
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        if type == .delete, let indx = indexPath {
-            tableView.deleteRows(at: [indx], with: UITableViewRowAnimation.automatic)
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .delete:
+            tableView.deleteSections(IndexSet(integer:sectionIndex), with: .automatic)
+            break
+        default:
+            break
         }
     }
     
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        guard let indxP = indexPath else { return }
+        switch type {
+        case .delete:
+            tableView.deleteRows(at: [indxP], with: .automatic)
+            break
+        default:
+            break
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+        updateTotal()
+    }
     
     // MARK: - Navigation
 

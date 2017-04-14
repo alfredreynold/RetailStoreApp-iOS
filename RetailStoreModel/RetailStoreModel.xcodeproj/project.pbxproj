@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB1BDF6F1EA1125100031282 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = EB1BDF6E1EA1125100031282 /* items.json */; };
+		EB1BDF891EA1705C00031282 /* ItemModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BDF881EA1705C00031282 /* ItemModelTests.swift */; };
 		EB3912651EA08A5000EB4291 /* RetailStoreModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB39125B1EA08A5000EB4291 /* RetailStoreModel.framework */; };
 		EB39126A1EA08A5000EB4291 /* RetailStoreModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912691EA08A5000EB4291 /* RetailStoreModelTests.swift */; };
 		EB39126C1EA08A5000EB4291 /* RetailStoreModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EB39125E1EA08A5000EB4291 /* RetailStoreModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		EB1BDF6E1EA1125100031282 /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
+		EB1BDF881EA1705C00031282 /* ItemModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModelTests.swift; sourceTree = "<group>"; };
 		EB39125B1EA08A5000EB4291 /* RetailStoreModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RetailStoreModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB39125E1EA08A5000EB4291 /* RetailStoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetailStoreModel.h; sourceTree = "<group>"; };
 		EB39125F1EA08A5000EB4291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		EB3912681EA08A5000EB4291 /* RetailStoreModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB1BDF881EA1705C00031282 /* ItemModelTests.swift */,
 				EB3912691EA08A5000EB4291 /* RetailStoreModelTests.swift */,
 				EB39126B1EA08A5000EB4291 /* Info.plist */,
 			);
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1BDF891EA1705C00031282 /* ItemModelTests.swift in Sources */,
 				EB39126A1EA08A5000EB4291 /* RetailStoreModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
