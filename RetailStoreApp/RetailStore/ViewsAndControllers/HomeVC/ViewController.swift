@@ -14,7 +14,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cartItemsCountLabel: UILabel!
+    
+    
     let tableViewCellIdentifier = "RSCell"
+    let segueFromCellToItemDetails = "segueFromCellToItemDetails"
+    let segueToCartVC = "segueToCartVC"
     
     var fetchedResultsController:NSFetchedResultsController<Item>?
     var user:User?
@@ -25,7 +30,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(nib, forCellReuseIdentifier: tableViewCellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.estimatedRowHeight = 90.0
+        self.title = "Home"
         loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        loadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +49,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func loadData() {
-        let userRequest:NSFetchRequest<User> = User.fetchRequest()
-        userRequest.sortDescriptors = []
-        userRequest.fetchLimit = 1
-        do {
-            let users = try DataManager.sharedManager.context.fetch(userRequest)
-            user = users[0]
-            self.userNameLabel.text = "Hi, \(user?.name ?? String())"
-        } catch {
-            print("Failed To load user")
+        
+        if user == nil {
+            let userRequest:NSFetchRequest<User> = User.fetchRequest()
+            userRequest.sortDescriptors = []
+            userRequest.fetchLimit = 1
+            do {
+                let users = try DataManager.sharedManager.context.fetch(userRequest)
+                user = users[0]
+                self.userNameLabel.text = "Hi, \(user?.name ?? String())"
+            } catch {
+                print("Failed To load user")
+            }
+        }
+        
+        if let count = user?.items?.count, count > 0 {
+            self.cartItemsCountLabel.text = "\(count)"
+        } else {
+            self.cartItemsCountLabel.text = ""
         }
         
         if fetchedResultsController == nil {
@@ -81,12 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.itemNameLabel.text = item.name
         cell.itemPriceLabel.text = "Rs. \(item.price)"
-        
-        guard let imgName = item.imageUrl else {
-            cell.itemImageView.image = UIImage(named: "cart")
-            return cell
-        }
-        cell.itemImageView.image = UIImage(named: imgName)
+        cell.itemImageView.image = UIImage(named: item.imageUrl ?? "cart")
         return cell
     }
     
@@ -98,5 +117,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: segueFromCellToItemDetails, sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueFromCellToItemDetails {
+            if let indexPath = sender as? IndexPath, let item = fetchedResultsController?.object(at: indexPath), let destVC = segue.destination as? ItemDetailsViewController {
+                destVC.item = item
+                destVC.user = self.user
+            }
+        } else if segue.identifier == segueToCartVC {
+            if let destVC = segue.destination as? CartViewController {
+                destVC.user = self.user
+            }
+        }
+    }
+    
 }
 

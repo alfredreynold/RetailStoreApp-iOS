@@ -1,6 +1,6 @@
 //
 //  Item+CoreDataProperties.swift
-//  RetailStore
+//  RetailStoreModel
 //
 //  Created by Alfred Reynold on 4/14/17.
 //  Copyright © 2017 Alfred Reynold. All rights reserved.
@@ -16,10 +16,11 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var category: String?
-    @NSManaged public var uid: Int16
-    @NSManaged public var price: Float
     @NSManaged public var imageUrl: String?
+    @NSManaged public var name: String?
+    @NSManaged public var price: Float
+    @NSManaged public var uid: Int16
+    @NSManaged public var user: User?
 
 }
