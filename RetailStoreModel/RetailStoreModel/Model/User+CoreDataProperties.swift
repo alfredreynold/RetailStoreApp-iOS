@@ -1,9 +1,9 @@
 //
 //  User+CoreDataProperties.swift
-//  RetailStoreModel
+//  
 //
-//  Created by Alfred Reynold on 4/14/17.
-//  Copyright © 2017 Alfred Reynold. All rights reserved.
+//  Created by Alfred Reynold on 5/3/17.
+//
 //
 
 import Foundation
@@ -16,8 +16,8 @@ extension User {
         return NSFetchRequest<User>(entityName: "User")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var id: Int16
+    @NSManaged public var name: String?
     @NSManaged public var items: NSSet?
 
 }

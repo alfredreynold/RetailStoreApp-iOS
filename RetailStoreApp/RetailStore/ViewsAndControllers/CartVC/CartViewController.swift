@@ -34,12 +34,16 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func updateTotal() {
         var total:Float = 0.00
         
         if let items = user?.items?.allObjects as? [Item] {
             for item in items {
-                total += item.price
+                total += (item.price * Float(item.quantity))
             }
         }
         self.totalAmountLabel.text = "Rs. \(total)"
@@ -86,8 +90,15 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: cartCellIdentifier) as? RSCartTableViewCell else { return UITableViewCell(style: .default, reuseIdentifier: cartCellIdentifier) }
         
         guard let item = cartFetchedResultController?.object(at: indexPath) else { return cell }
-        cell.itemName.text = item.name
-        cell.itemPrice.text = "Rs. \(item.price)"
+        
+        if let name = item.name {
+            cell.itemName.text = "\(name) * \(item.quantity)"
+        } else {
+            cell.itemName.text = ""
+        }
+        
+        let itemPrice = item.quantity > 0 ? item.price * Float(item.quantity) : item.price
+        cell.itemPrice.text = "Rs. \(itemPrice)"
         return cell
     }
     

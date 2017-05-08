@@ -5,6 +5,7 @@
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="items" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -14,7 +15,7 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="user" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="45" positionY="54" width="128" height="133"/>
+        <element name="Item" positionX="45" positionY="54" width="128" height="150"/>
         <element name="User" positionX="-333" positionY="53" width="128" height="88"/>
     </elements>
 </model>

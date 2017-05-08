@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		EB1BDF6F1EA1125100031282 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = EB1BDF6E1EA1125100031282 /* items.json */; };
 		EB1BDF891EA1705C00031282 /* ItemModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BDF881EA1705C00031282 /* ItemModelTests.swift */; };
+		EB325CE61EB9A5EF00F08E70 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB325CE41EB9A5EF00F08E70 /* User+CoreDataProperties.swift */; };
+		EB325CE71EB9A5EF00F08E70 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB325CE51EB9A5EF00F08E70 /* Item+CoreDataProperties.swift */; };
 		EB3912651EA08A5000EB4291 /* RetailStoreModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB39125B1EA08A5000EB4291 /* RetailStoreModel.framework */; };
 		EB39126A1EA08A5000EB4291 /* RetailStoreModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912691EA08A5000EB4291 /* RetailStoreModelTests.swift */; };
 		EB39126C1EA08A5000EB4291 /* RetailStoreModel.h in Headers */ = {isa = PBXBuildFile; fileRef = EB39125E1EA08A5000EB4291 /* RetailStoreModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB39128D1EA08C9D00EB4291 /* DataManager+ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39128B1EA08C9D00EB4291 /* DataManager+ParseData.swift */; };
 		EB39128E1EA08C9D00EB4291 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB39128C1EA08C9D00EB4291 /* DataManager.swift */; };
 		EB39129A1EA08CAA00EB4291 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912921EA08CAA00EB4291 /* Item+CoreDataClass.swift */; };
-		EB39129B1EA08CAA00EB4291 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912931EA08CAA00EB4291 /* Item+CoreDataProperties.swift */; };
 		EB39129E1EA08CAA00EB4291 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912961EA08CAA00EB4291 /* User+CoreDataClass.swift */; };
-		EB39129F1EA08CAA00EB4291 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3912971EA08CAA00EB4291 /* User+CoreDataProperties.swift */; };
 		EB3912A21EA08CB700EB4291 /* RetailStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB3912A01EA08CB700EB4291 /* RetailStore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +34,8 @@
 /* Begin PBXFileReference section */
 		EB1BDF6E1EA1125100031282 /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 		EB1BDF881EA1705C00031282 /* ItemModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModelTests.swift; sourceTree = "<group>"; };
+		EB325CE41EB9A5EF00F08E70 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EB325CE51EB9A5EF00F08E70 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EB39125B1EA08A5000EB4291 /* RetailStoreModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RetailStoreModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB39125E1EA08A5000EB4291 /* RetailStoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RetailStoreModel.h; sourceTree = "<group>"; };
 		EB39125F1EA08A5000EB4291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,9 +45,7 @@
 		EB39128B1EA08C9D00EB4291 /* DataManager+ParseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+ParseData.swift"; sourceTree = "<group>"; };
 		EB39128C1EA08C9D00EB4291 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EB3912921EA08CAA00EB4291 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EB3912931EA08CAA00EB4291 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EB3912961EA08CAA00EB4291 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		EB3912971EA08CAA00EB4291 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EB3912A11EA08CB700EB4291 /* RetailStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RetailStore.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,10 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				EB3912A01EA08CB700EB4291 /* RetailStore.xcdatamodeld */,
+				EB325CE41EB9A5EF00F08E70 /* User+CoreDataProperties.swift */,
+				EB325CE51EB9A5EF00F08E70 /* Item+CoreDataProperties.swift */,
 				EB3912921EA08CAA00EB4291 /* Item+CoreDataClass.swift */,
-				EB3912931EA08CAA00EB4291 /* Item+CoreDataProperties.swift */,
 				EB3912961EA08CAA00EB4291 /* User+CoreDataClass.swift */,
-				EB3912971EA08CAA00EB4291 /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,12 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB39129B1EA08CAA00EB4291 /* Item+CoreDataProperties.swift in Sources */,
+				EB325CE71EB9A5EF00F08E70 /* Item+CoreDataProperties.swift in Sources */,
 				EB39129A1EA08CAA00EB4291 /* Item+CoreDataClass.swift in Sources */,
 				EB39128D1EA08C9D00EB4291 /* DataManager+ParseData.swift in Sources */,
+				EB325CE61EB9A5EF00F08E70 /* User+CoreDataProperties.swift in Sources */,
 				EB39129E1EA08CAA00EB4291 /* User+CoreDataClass.swift in Sources */,
 				EB39128E1EA08C9D00EB4291 /* DataManager.swift in Sources */,
-				EB39129F1EA08CAA00EB4291 /* User+CoreDataProperties.swift in Sources */,
 				EB3912A21EA08CB700EB4291 /* RetailStore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

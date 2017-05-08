@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pz1-vz-XXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986.9565217391305" y="-110.05434782608697"/>
+            <point key="canvasLocation" x="2594" y="168"/>
         </scene>
         <!--Item Details View Controller-->
         <scene sceneID="VSB-Pb-10e">
@@ -230,12 +230,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-w1-mlS">
-                                <rect key="frame" x="40" y="338" width="334" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaJ-w1-mlS">
+                                <rect key="frame" x="40" y="391" width="334" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.71764705880000002" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="55R-px-0zL"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add to cart">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -244,10 +242,38 @@
                                     <action selector="addToCartTapped:" destination="Tky-eJ-5eq" eventType="touchUpInside" id="QdC-rt-Mhj"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mYW-yZ-UXy">
+                                <rect key="frame" x="160" y="338" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="counterValueChanged:" destination="Tky-eJ-5eq" eventType="valueChanged" id="P4m-EH-M2o"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYe-K2-gvA">
+                                <rect key="frame" x="40" y="342" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-pf-F2i">
+                                <rect key="frame" x="280" y="338" width="58" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quV-57-ewM">
+                                <rect key="frame" x="299" y="439" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="cart"/>
+                                <connections>
+                                    <segue destination="Mfg-B2-Knl" kind="show" identifier="itemDetailsToCart" id="JDs-aL-85s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="RaJ-w1-mlS" secondAttribute="trailing" constant="20" id="0DR-PY-BYu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mOg-bf-fnk" secondAttribute="trailing" constant="20" id="5iH-EC-lLJ"/>
                             <constraint firstItem="mOg-bf-fnk" firstAttribute="leading" secondItem="Vxm-Kl-kVc" secondAttribute="leadingMargin" constant="20" id="71X-iT-Zm1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wHv-4U-Cz9" secondAttribute="trailing" constant="20" id="7Ic-2S-Cxw"/>
@@ -257,8 +283,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="FRv-Vd-Vyo" secondAttribute="trailing" constant="20" id="FAt-hk-e0g"/>
                             <constraint firstItem="FRv-Vd-Vyo" firstAttribute="top" secondItem="uzp-zJ-bOR" secondAttribute="bottom" constant="20" id="FO4-xM-u0S"/>
                             <constraint firstItem="FRv-Vd-Vyo" firstAttribute="leading" secondItem="Vxm-Kl-kVc" secondAttribute="leadingMargin" constant="20" id="OQF-7C-2MY"/>
-                            <constraint firstItem="RaJ-w1-mlS" firstAttribute="leading" secondItem="Vxm-Kl-kVc" secondAttribute="leadingMargin" constant="20" id="ZD1-To-CU1"/>
-                            <constraint firstItem="RaJ-w1-mlS" firstAttribute="top" secondItem="wHv-4U-Cz9" secondAttribute="bottom" constant="8" id="dsB-0r-a4E"/>
                             <constraint firstItem="wHv-4U-Cz9" firstAttribute="leading" secondItem="Vxm-Kl-kVc" secondAttribute="leadingMargin" constant="20" id="esb-Cu-Xpl"/>
                         </constraints>
                     </view>
@@ -270,14 +294,16 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="counter" destination="mYW-yZ-UXy" id="NHG-YY-eZq"/>
                         <outlet property="itemImageView" destination="FRv-Vd-Vyo" id="6Oa-WJ-WLs"/>
                         <outlet property="itemNameLabel" destination="mOg-bf-fnk" id="C4I-sg-u4W"/>
                         <outlet property="itemPriceLabel" destination="wHv-4U-Cz9" id="raS-fn-OTX"/>
+                        <outlet property="quantityValueLabel" destination="zvi-pf-F2i" id="04q-X6-aw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6W7-Vo-Zin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904.5387994143484" y="689.0625"/>
+            <point key="canvasLocation" x="1504" y="964"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TSf-sQ-FDe">
@@ -303,6 +329,7 @@
         <image name="cart" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="JDs-aL-85s"/>
         <segue reference="eu1-W6-DkP"/>
     </inferredMetricsTieBreakers>
 </document>
